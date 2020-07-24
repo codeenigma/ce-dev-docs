@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ce-dev</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <link rel="stylesheet" href="/ce-dev-docs/1.x/css/main.min.a6622f4e8657d1599f867ce3c8d3d45907510ec1f8df9582702380aee2fc72f7.css">
+</head><body class="doc"><header><a href="https://pm98zz-c.github.io/ce-dev-docs/1.x/home">ce-dev</a></header><article>
+        <h1 id="commands">Commands</h1>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<a href="#ce-dev-autocomplete-shell" ><code>ce-dev autocomplete [SHELL]</code></a>
+</li>
+<li>
+<a href="#ce-dev-browse" ><code>ce-dev browse</code></a>
+</li>
+<li>
+<a href="#ce-dev-build" ><code>ce-dev build</code></a>
+</li>
+<li>
+<a href="#ce-dev-config" ><code>ce-dev config</code></a>
+</li>
+<li>
+<a href="#ce-dev-create" ><code>ce-dev create</code></a>
+</li>
+<li>
+<a href="#ce-dev-deploy" ><code>ce-dev deploy</code></a>
+</li>
+<li>
+<a href="#ce-dev-destroy" ><code>ce-dev destroy</code></a>
+</li>
+<li>
+<a href="#ce-dev-help-command" ><code>ce-dev help [COMMAND]</code></a>
+</li>
+<li>
+<a href="#ce-dev-init" ><code>ce-dev init</code></a>
+</li>
+<li>
+<a href="#ce-dev-provision" ><code>ce-dev provision</code></a>
+</li>
+<li>
+<a href="#ce-dev-pull" ><code>ce-dev pull</code></a>
+</li>
+<li>
+<a href="#ce-dev-push" ><code>ce-dev push</code></a>
+</li>
+<li>
+<a href="#ce-dev-shell-container" ><code>ce-dev shell [CONTAINER]</code></a>
+</li>
+<li>
+<a href="#ce-dev-start" ><code>ce-dev start</code></a>
+</li>
+<li>
+<a href="#ce-dev-stop" ><code>ce-dev stop</code></a>
+</li>
+</ul>
+<h2 id="ce-dev-autocomplete-shell"><code>ce-dev autocomplete [SHELL]</code></h2>
+<p>display autocomplete installation instructions</p>
+<pre><code>USAGE
+  $ ce-dev autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL  shell type
+
+OPTIONS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+EXAMPLES
+  $ ce-dev autocomplete
+  $ ce-dev autocomplete bash
+  $ ce-dev autocomplete zsh
+  $ ce-dev autocomplete --refresh-cache
+</code></pre><p><em>See code: 
+<a href="https://github.com/oclif/plugin-autocomplete/blob/v0.2.0/src/commands/autocomplete/index.ts"  target="_blank" rel="noopener">@oclif/plugin-autocomplete</a>
+</em></p>
+<h2 id="ce-dev-browse"><code>ce-dev browse</code></h2>
+<p>Open preset URL(s) in a browser</p>
+<pre><code>USAGE
+  $ ce-dev browse
+
+EXAMPLE
+  $ ce-dev browse
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/browse.ts"  target="_blank" rel="noopener">src/commands/browse.ts</a>
+</em></p>
+<h2 id="ce-dev-build"><code>ce-dev build</code></h2>
+<p>Commit the existing containers as new docker images, and create a new docker-compose file referencing them.</p>
+<pre><code>USAGE
+  $ ce-dev build
+
+OPTIONS
+  -d, --destination=destination  [default: ce-dev.compose.prebuilt.yml] Path to the output docker-compose file, relative
+                                 to the project ce-dev folder.
+
+  -h, --help                     show CLI help
+
+  -r, --registry=registry        Docker registry to use. This overrides the one defined in the source compose template.
+
+  -t, --template=template        [default: ce-dev.compose.yml] Path to a docker-compose template file, relative to the
+                                 project ce-dev folder. WARNING: this must match the original one the project was
+                                 constructed with.
+
+EXAMPLE
+  $ ce-dev build --template example.compose.yml
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/build.ts"  target="_blank" rel="noopener">src/commands/build.ts</a>
+</em></p>
+<h2 id="ce-dev-config"><code>ce-dev config</code></h2>
+<p>Configure global user preferences.</p>
+<pre><code>USAGE
+  $ ce-dev config
+
+OPTIONS
+  -g, --global  Update global config instead of project one
+
+EXAMPLE
+  $ ce-dev config
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/config.ts"  target="_blank" rel="noopener">src/commands/config.ts</a>
+</em></p>
+<h2 id="ce-dev-create"><code>ce-dev create</code></h2>
+<p>Generates a new project from a template</p>
+<pre><code>USAGE
+  $ ce-dev create
+
+OPTIONS
+  -d, --destination=destination  Path to the project destination.
+  -h, --help                     show CLI help
+
+  -p, --project=project          A unique name for your project. Because it is used in various places (db names, url,
+                                 etc), stick with lowercase alphanumeric chars.
+
+  -t, --template=template        Name of a template: &quot;drupal8&quot;
+
+EXAMPLE
+  $ ce-dev create --template drupal8 --project myproject
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/create.ts"  target="_blank" rel="noopener">src/commands/create.ts</a>
+</em></p>
+<h2 id="ce-dev-deploy"><code>ce-dev deploy</code></h2>
+<p>Setup an app with Ansible playbooks.</p>
+<pre><code>USAGE
+  $ ce-dev deploy
+
+EXAMPLE
+  $ ce-dev deploy example-app
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/deploy.ts"  target="_blank" rel="noopener">src/commands/deploy.ts</a>
+</em></p>
+<h2 id="ce-dev-destroy"><code>ce-dev destroy</code></h2>
+<p>Destroy project&rsquo;s containers using docker-compose kill.</p>
+<pre><code>USAGE
+  $ ce-dev destroy
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ ce-dev destroy
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/destroy.ts"  target="_blank" rel="noopener">src/commands/destroy.ts</a>
+</em></p>
+<h2 id="ce-dev-help-command"><code>ce-dev help [COMMAND]</code></h2>
+<p>display help for ce-dev</p>
+<pre><code>USAGE
+  $ ce-dev help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
+</code></pre><p><em>See code: 
+<a href="https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts"  target="_blank" rel="noopener">@oclif/plugin-help</a>
+</em></p>
+<h2 id="ce-dev-init"><code>ce-dev init</code></h2>
+<p>Generates a docker-compose.yml file from a template</p>
+<pre><code>USAGE
+  $ ce-dev init
+
+OPTIONS
+  -h, --help               show CLI help
+
+  -t, --template=template  [default: ce-dev.compose.prebuilt.yml] path to a docker-compose template file, relative to
+                           the project root
+
+EXAMPLE
+  $ ce-dev init --template example.compose.yml
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/init.ts"  target="_blank" rel="noopener">src/commands/init.ts</a>
+</em></p>
+<h2 id="ce-dev-provision"><code>ce-dev provision</code></h2>
+<p>Provision containers with Ansible playbooks.</p>
+<pre><code>USAGE
+  $ ce-dev provision
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/provision.ts"  target="_blank" rel="noopener">src/commands/provision.ts</a>
+</em></p>
+<h2 id="ce-dev-pull"><code>ce-dev pull</code></h2>
+<p>Pull images referenced in a compose file from a remote repository.</p>
+<pre><code>USAGE
+  $ ce-dev pull
+
+OPTIONS
+  -a, --anonymous          Do not prompt for login credentials.
+  -h, --help               show CLI help
+
+  -p, --password=password  Password to use to login against the Docker registry. Warning, this will appear in your shell
+                           history in clear text.
+
+  -r, --registry=registry  Docker registry to use. This overrides the one defined in the source compose template.
+
+  -t, --template=template  [default: ce-dev.compose.prebuilt.yml] Path to a docker-compose template file, relative to
+                           the project root. WARNING: this must match the original one the project was constructed with.
+
+  -u, --username=username  Username to use to login against the Docker registry.
+
+EXAMPLE
+  $ ce-dev pull --template example.compose.yml
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/pull.ts"  target="_blank" rel="noopener">src/commands/pull.ts</a>
+</em></p>
+<h2 id="ce-dev-push"><code>ce-dev push</code></h2>
+<p>Push images referenced in a compose file to a remote repository.</p>
+<pre><code>USAGE
+  $ ce-dev push
+
+OPTIONS
+  -a, --anonymous          Do not prompt for login credentials.
+  -h, --help               show CLI help
+
+  -p, --password=password  Password to use to login against the Docker registry. Warning, this will appear in your shell
+                           history in clear text.
+
+  -r, --registry=registry  Docker registry to use. This overrides the one defined in the source compose template.
+
+  -t, --template=template  [default: ce-dev.compose.prebuilt.yml] Path to a docker-compose template file, relative to
+                           the project root. WARNING: this must match the original one the project was constructed with.
+
+  -u, --username=username  Username to use to login against the Docker registry.
+
+EXAMPLE
+  $ ce-dev push --template example.compose.yml
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/push.ts"  target="_blank" rel="noopener">src/commands/push.ts</a>
+</em></p>
+<h2 id="ce-dev-shell-container"><code>ce-dev shell [CONTAINER]</code></h2>
+<p>Open a shell session on the given container.</p>
+<pre><code>USAGE
+  $ ce-dev shell [CONTAINER]
+
+ARGUMENTS
+  CONTAINER  Name of the container to target. Use `docker ps` to see available containers.
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ ce-dev shell example-app
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/shell.ts"  target="_blank" rel="noopener">src/commands/shell.ts</a>
+</em></p>
+<h2 id="ce-dev-start"><code>ce-dev start</code></h2>
+<p>Spin up containers using docker-compose and update /etc/hosts file.</p>
+<pre><code>USAGE
+  $ ce-dev start
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ ce-dev start
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/start.ts"  target="_blank" rel="noopener">src/commands/start.ts</a>
+</em></p>
+<h2 id="ce-dev-stop"><code>ce-dev stop</code></h2>
+<p>Stops running containers for a project.</p>
+<pre><code>USAGE
+  $ ce-dev stop
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ ce-dev stop
+</code></pre><p><em>See code: 
+<a href="https://github.com/codeenigma/ce-dev/blob/v1.0.11/src/commands/stop.ts"  target="_blank" rel="noopener">src/commands/stop.ts</a>
+</em></p>
+<!-- raw HTML omitted -->
+
+    </article>
+    <aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#commands">Commands</a>
+      <ul>
+        <li><a href="#ce-dev-autocomplete-shell"><code>ce-dev autocomplete [SHELL]</code></a></li>
+        <li><a href="#ce-dev-browse"><code>ce-dev browse</code></a></li>
+        <li><a href="#ce-dev-build"><code>ce-dev build</code></a></li>
+        <li><a href="#ce-dev-config"><code>ce-dev config</code></a></li>
+        <li><a href="#ce-dev-create"><code>ce-dev create</code></a></li>
+        <li><a href="#ce-dev-deploy"><code>ce-dev deploy</code></a></li>
+        <li><a href="#ce-dev-destroy"><code>ce-dev destroy</code></a></li>
+        <li><a href="#ce-dev-help-command"><code>ce-dev help [COMMAND]</code></a></li>
+        <li><a href="#ce-dev-init"><code>ce-dev init</code></a></li>
+        <li><a href="#ce-dev-provision"><code>ce-dev provision</code></a></li>
+        <li><a href="#ce-dev-pull"><code>ce-dev pull</code></a></li>
+        <li><a href="#ce-dev-push"><code>ce-dev push</code></a></li>
+        <li><a href="#ce-dev-shell-container"><code>ce-dev shell [CONTAINER]</code></a></li>
+        <li><a href="#ce-dev-start"><code>ce-dev start</code></a></li>
+        <li><a href="#ce-dev-stop"><code>ce-dev stop</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside><aside class="menu">
+<p> </p>
+<ul>
+<li><a href="home">Home</a>
+<ul>
+<li><a href="/install">Install</a></li>
+<li><a href="/commands">Commands</a></li>
+<li><a href="/troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </body>
+</html>

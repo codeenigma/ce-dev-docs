@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ce-dev</title>
+    <link>https://pm98zz-c.github.io/ce-dev-docs/1.x/</link>
+    <description>Recent content on ce-dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://pm98zz-c.github.io/ce-dev-docs/1.x/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://pm98zz-c.github.io/ce-dev-docs/1.x/_sidebar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pm98zz-c.github.io/ce-dev-docs/1.x/_sidebar/</guid>
+      <description>   Home   Install   Commands   Troubleshooting     </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://pm98zz-c.github.io/ce-dev-docs/1.x/commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pm98zz-c.github.io/ce-dev-docs/1.x/commands/</guid>
+      <description>Commands   ce-dev autocomplete [SHELL]   ce-dev browse   ce-dev build   ce-dev config   ce-dev create   ce-dev deploy   ce-dev destroy   ce-dev help [COMMAND]   ce-dev init   ce-dev provision   ce-dev pull   ce-dev push   ce-dev shell [CONTAINER]   ce-dev start   ce-dev stop   ce-dev autocomplete [SHELL] display autocomplete installation instructions</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://pm98zz-c.github.io/ce-dev-docs/1.x/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pm98zz-c.github.io/ce-dev-docs/1.x/home/</guid>
+      <description>ce-dev Local Stack wrapper tool
+Install Linux Mac Quickstart Overview Commands Troubleshooting </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://pm98zz-c.github.io/ce-dev-docs/1.x/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pm98zz-c.github.io/ce-dev-docs/1.x/install/</guid>
+      <description>Install Hardware requirements: while the stack in itself is not necessarily heavy, you will need sufficient resources to run all your projects and diskspace to store them. You&amp;rsquo;ll need at least 8GB of RAM (16GB reccomended) and modern host (SSD, new processor) to run comfortably. We also assume common utilities are present:
+ git curl gunzip  Linux Requirements Docker Follow the installation instructions for your distro from https://docs.docker.com/engine/install/. It is generally straightforward, except for users of Fedora 31 and above .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://pm98zz-c.github.io/ce-dev-docs/1.x/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pm98zz-c.github.io/ce-dev-docs/1.x/troubleshooting/</guid>
+      <description>Troubleshooting File sync issues Changes in files on your host not being reflected in the container(s) can have a few causes:
+Inotify If your files are not updating you should check the maximum permitted inotify watchers .
+Text editor The way some editors behave on save means the inumber of the file does not change, so unison does not pick up a difference and the files in your containers do not update.</description>
+    </item>
+    
+  </channel>
+</rss>
