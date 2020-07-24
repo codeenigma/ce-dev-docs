@@ -62,8 +62,19 @@ sudo sysctl -p # Or better yet, reboot.
 </code></pre><p><em>note for the &ldquo;I don&rsquo;t trust your install script&rdquo; crowd out there&hellip; 1. Just follow the link to see what this script does. 2. If you don&rsquo;t trust the install script, why would you trust the rest of the program in the first place?</em></p>
 <h2 id="mac">Mac</h2>
 <h3 id="requirements-1">Requirements</h3>
-<h4 id="docker-1">Docker</h4>
+<h4 id="docker-desktop">Docker Desktop</h4>
 <p>Follow the installation instructions from <a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>.</p>
+<p>Be sure to allow enough resources for it to run smoothly. There&rsquo;s no magic rule, and it will depends on your host and needs, but we found the following to be decent defaults:</p>
+<ul>
+<li>Be generous on RAM, but do not allocate it all for Docker. If you do not set a limit and you run a resource hungry service, everything, including processes on the hosts (think Electron apps, Chrome and the like, and by cascade the Docker processes themselves) will end up swapping and being ultra slow. 8GB or 10GB out of 16GB should be reasonable values.</li>
+<li>Do not throttle CPU usage (ie, allocate them all). Or, go the other way round and allocate only one. This seems contradictory, but it looks like it behave diffently based on your hardware and/or OS version. In certain cases, containers seem to be unable to make use of more than one core anyway, so allocating more than one ends up being counter-productive as it will impede processes on the host.</li>
+<li>Make sure you have enough disk space allocated for the VM Disk image. This again will vary on usage, but with a dozen of projects that have a 10GB database each, you&rsquo;re already well over 100GB. On the other hand, <em><strong>you can always grow the virtual disk afterward, but you can NOT shrink it without destroying all containers and volumes</strong></em>, so you can start small and grow it as needed if you encounter some &ldquo;no space left on device/disk full&rdquo; errors.</li>
+</ul>
+<p>
+<a href="https://codeenigma.github.io/ce-dev-docs/1.x/uploads/docker-mac-settings.png" >
+<img src="https://codeenigma.github.io/ce-dev-docs/1.x/uploads/docker-mac-settings.png" alt="Docker Desktop setting pane"  />
+</a>
+</p>
 <h4 id="docker-compose-1">Docker Compose</h4>
 <p>Docker Compose is bundled with Docker Desktop already.</p>
 <h4 id="mkcert-1">mkcert</h4>

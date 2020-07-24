@@ -34,8 +34,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/home/</guid>
-      <description>ce-dev Local Stack wrapper tool
-Install Linux Mac Quickstart Overview Commands Troubleshooting </description>
+      <description>ce-dev Overview </description>
     </item>
     
     <item>
@@ -57,6 +56,15 @@ Install Linux Mac Quickstart Overview Commands Troubleshooting </description>
       <description>Troubleshooting File sync issues Changes in files on your host not being reflected in the container(s) can have a few causes:
 Inotify If your files are not updating you should check the maximum permitted inotify watchers .
 Text editor The way some editors behave on save means the inumber of the file does not change, so unison does not pick up a difference and the files in your containers do not update.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://codeenigma.github.io/ce-dev-docs/1.x/userconfig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codeenigma.github.io/ce-dev-docs/1.x/userconfig/</guid>
+      <description>User config </description>
     </item>
     
   </channel>
