@@ -5,14 +5,14 @@
   <title>ce-dev</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   
-  <link rel="stylesheet" href="https://pm98zz-c.github.io/ce-dev-docs/1.x/css/main.min.a6622f4e8657d1599f867ce3c8d3d45907510ec1f8df9582702380aee2fc72f7.css">
-</head><body class="doc"><header><a href="https://pm98zz-c.github.io/ce-dev-docs/1.x/home">ce-dev</a></header><article>
+  <link rel="stylesheet" href="https://codeenigma.github.io/ce-dev-docs/1.x/css/main.min.a6622f4e8657d1599f867ce3c8d3d45907510ec1f8df9582702380aee2fc72f7.css">
+</head><body class="doc"><header><a href="https://codeenigma.github.io/ce-dev-docs/1.x/home">ce-dev</a></header><article>
         <h1 id="troubleshooting">Troubleshooting</h1>
 <h2 id="file-sync-issues">File sync issues</h2>
 <p>Changes in files on your host not being reflected in the container(s) can have a few causes:</p>
 <h3 id="inotify">Inotify</h3>
 <p>If your files are not updating you should check the 
-<a href="https://pm98zz-c.github.io/ce-dev-docs/1.x/install#inotify-watcher-limit" >maximum permitted <code>inotify</code> watchers</a>
+<a href="https://codeenigma.github.io/ce-dev-docs/1.x/install#inotify-watcher-limit" >maximum permitted <code>inotify</code> watchers</a>
 .</p>
 <h3 id="text-editor">Text editor</h3>
 <p>The way some editors behave on save means the inumber of the file does not change, so unison does not pick up a difference and the files in your containers do not update. Notable culprits are <code>vim</code> and <code>Atom</code>. In both cases there are fixes - for example the <code>local-history</code> plugin for <code>Atom</code> forces it to behave as we need. If you have mysterious issues with files not changing in your containers and it isn&rsquo;t the <code>inotify</code> watcher limit above, check how your editor behaves.</p>
@@ -38,9 +38,9 @@
 <ul>
 <li><a href="home">Home</a>
 <ul>
-<li><a href="https://pm98zz-c.github.io/ce-dev-docs/1.x/install">Install</a></li>
-<li><a href="https://pm98zz-c.github.io/ce-dev-docs/1.x/commands">Commands</a></li>
-<li><a href="https://pm98zz-c.github.io/ce-dev-docs/1.x/troubleshooting">Troubleshooting</a></li>
+<li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/install">Install</a></li>
+<li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/commands">Commands</a></li>
+<li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 </ul>
