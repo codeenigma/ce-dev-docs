@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/_sidebar/</guid>
-      <description>   Home   Install   Commands   Troubleshooting   SSH   User config     </description>
+      <description>   Home   Install   Getting started   Commands   Troubleshooting   SSH   User config     </description>
     </item>
     
     <item>
@@ -30,11 +30,20 @@
     
     <item>
       <title></title>
+      <link>https://codeenigma.github.io/ce-dev-docs/1.x/gettingstarted/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codeenigma.github.io/ce-dev-docs/1.x/gettingstarted/</guid>
+      <description>Getting started Note: this tutorial always refers to docker and docker-compose, never to sudo docker and sudo docker-compose, for readability. Adapt the commands accordingly for your setup. We also use indifferently &amp;ldquo;host&amp;rdquo;, &amp;ldquo;host machine&amp;rdquo;, &amp;ldquo;laptop&amp;rdquo; or &amp;ldquo;workstation&amp;rdquo; to refer to the machine you&amp;rsquo;re using ce-dev on; and &amp;ldquo;guest&amp;rdquo;, &amp;ldquo;container&amp;rdquo; or &amp;ldquo;service&amp;rdquo; to refer to running containers. It will still work the same whether you actually use a laptop or not 😉</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://codeenigma.github.io/ce-dev-docs/1.x/home/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/home/</guid>
-      <description>ce-dev Overview </description>
+      <description>ce-dev Install  Getting started  </description>
     </item>
     
     <item>
