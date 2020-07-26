@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/_sidebar/</guid>
-      <description>   Home   Install   Commands   Troubleshooting     </description>
+      <description>   Home   Install   Commands   Troubleshooting   SSH   User config     </description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/commands/</guid>
-      <description>Commands   ce-dev autocomplete [SHELL]   ce-dev browse   ce-dev build   ce-dev config   ce-dev create   ce-dev deploy   ce-dev destroy   ce-dev help [COMMAND]   ce-dev init   ce-dev provision   ce-dev pull   ce-dev push   ce-dev shell [CONTAINER]   ce-dev start   ce-dev stop   ce-dev autocomplete [SHELL] display autocomplete installation instructions</description>
+      <description>Commands   ce-dev autocomplete [SHELL]   ce-dev browse   ce-dev build   ce-dev clean   ce-dev config   ce-dev create   ce-dev deploy   ce-dev destroy   ce-dev help [COMMAND]   ce-dev init   ce-dev provision   ce-dev pull   ce-dev push   ce-dev shell [CONTAINER]   ce-dev start   ce-dev stop   ce-dev update   ce-dev autocomplete [SHELL] display autocomplete installation instructions</description>
     </item>
     
     <item>
@@ -49,6 +49,16 @@
     
     <item>
       <title></title>
+      <link>https://codeenigma.github.io/ce-dev-docs/1.x/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codeenigma.github.io/ce-dev-docs/1.x/ssh/</guid>
+      <description>SSH We use SSH in two widely different ways.
+Inter-container communication Because the configuration of containers is made through Ansible, the main controller needs to be able to SSH to any container - or, to be precise, to any container based on the main ce-dev-base image. This uses a short-lived private/public keys pair, re-generated everytime the controller is re-started. There is thus no risk of someone accessing a running container with a &amp;ldquo;generic&amp;rdquo; publicly known key.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://codeenigma.github.io/ce-dev-docs/1.x/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -64,7 +74,9 @@ Text editor The way some editors behave on save means the inumber of the file do
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/userconfig/</guid>
-      <description>User config </description>
+      <description>User config You can access a few global settings using ce-dev config.
+Binaries You can alter the commands called for &amp;lsquo;docker&amp;rsquo;, &amp;lsquo;docker-compose&amp;rsquo; and &amp;lsquo;mkcert&amp;rsquo;. This is mostly useful if you added your user to the &amp;lsquo;docker&amp;rsquo; group on Linux and don&amp;rsquo;t want to be prompted for your password. Or if you&amp;rsquo;re doing funky stuff !
+SSH Username and Key Define the default username and private key to be used to be able to SSH from containers to private resources , eg.</description>
     </item>
     
   </channel>

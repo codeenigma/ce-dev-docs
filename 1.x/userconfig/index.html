@@ -8,12 +8,24 @@
   <link rel="stylesheet" href="https://codeenigma.github.io/ce-dev-docs/1.x/css/main.min.9c98165d1dd1f18e44902c88197986b800a6f81dad436c40e50a55817cd0f131.css">
 </head><body class="doc"><header><a href="https://codeenigma.github.io/ce-dev-docs/1.x/home">ce-dev</a></header><article>
         <h1 id="user-config">User config</h1>
+<p>You can access a few global settings using <code>ce-dev config</code>.</p>
+<h2 id="binaries">Binaries</h2>
+<p>You can alter the commands called for &lsquo;docker&rsquo;, &lsquo;docker-compose&rsquo; and &lsquo;mkcert&rsquo;. This is mostly useful if you added your user to the &lsquo;docker&rsquo; group on Linux and don&rsquo;t want to be prompted for your password. Or if you&rsquo;re doing funky stuff !</p>
+<h2 id="ssh-username-and-key">SSH Username and Key</h2>
+<p>Define the default username and private key to be used to be able to 
+<a href="https://codeenigma.github.io/ce-dev-docs/1.x/ssh" >SSH from containers to private resources</a>
+, eg. cloning private repos or syncing environments back.</p>
 
     </article>
     <aside>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#user-config">User config</a></li>
+    <li><a href="#user-config">User config</a>
+      <ul>
+        <li><a href="#binaries">Binaries</a></li>
+        <li><a href="#ssh-username-and-key">SSH Username and Key</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside><aside class="menu">
@@ -24,6 +36,8 @@
 <li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/install">Install</a></li>
 <li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/commands">Commands</a></li>
 <li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/troubleshooting">Troubleshooting</a></li>
+<li><a href="ssh">SSH</a></li>
+<li><a href="userconfig">User config</a></li>
 </ul>
 </li>
 </ul>

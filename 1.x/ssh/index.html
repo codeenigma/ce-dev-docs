@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ce-dev</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  
+  <link rel="stylesheet" href="https://codeenigma.github.io/ce-dev-docs/1.x/css/main.min.9c98165d1dd1f18e44902c88197986b800a6f81dad436c40e50a55817cd0f131.css">
+</head><body class="doc"><header><a href="https://codeenigma.github.io/ce-dev-docs/1.x/home">ce-dev</a></header><article>
+        <h1 id="ssh">SSH</h1>
+<p>We use SSH in two widely different ways.</p>
+<h2 id="inter-container-communication">Inter-container communication</h2>
+<p>Because the configuration of containers is made through Ansible, the main controller needs to be able to SSH to any container - or, to be precise, to any container based on the main ce-dev-base image.
+This uses a short-lived private/public keys pair, re-generated everytime the controller is re-started. There is thus no risk of someone accessing a running container with a &ldquo;generic&rdquo; publicly known key.
+It is hold in a separate volume, <code>ce_dev_ssh</code>, mounted on all containers and owned by the &lsquo;ce-dev&rsquo; user. This avoids exporting it by mistake if you build an image based on those containers (which would be mostly harmless, as those are re-generated anyway).</p>
+<h2 id="external-communication">External communication</h2>
+<p>Access to private resources - think cloning private repos, syncing back environments, <code>drush sql-sync</code> or anything advanced - from within the container would normally not be possible without a circumvoluted setup of ssh agent forwarding. You can easily enable it on an individual basis.</p>
+<h3 id="setting-up">Setting up</h3>
+<p>For each project, in the top level &ldquo;x-ce-dev&rdquo; entry, you can specify a list of hosts that will need to be accessed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">x-ce_dev</span>:
+  <span style="color:#66d9ef">ssh_hosts</span>:
+    - dev.example.com
+    - github.com
+</code></pre></div><p>When you first setup such a project with <code>ce-dev init</code>, you will be prompted for a username and private key to use for each of the hosts. The default values for those can be altered in your global 
+<a href="https://codeenigma.github.io/ce-dev-docs/1.x/userconfig" >user config</a>
+.</p>
+<p><em>Side note: in case you are wondering what username to use for gitlab.com/github.com or any git server &hellip; it doesn&rsquo;t matter, use whatever. It&rsquo;ll be always be git@ anyway</em></p>
+<h3 id="under-the-hood">Under the hood</h3>
+<p>How does it work? How secure is this?</p>
+<p>On <code>ce-dev init</code>, all we store the combo of host, username and filepath to the key in the project&rsquo;s config. When <code>ce-dev start</code> is called, we</p>
+<ul>
+<li>copy the private key from the host to memory (/dev/shm) on the guest container</li>
+<li>generate an 
+<a href="https://linux.die.net/man/5/ssh_config"  target="_blank" rel="noopener">.ssh/config</a>
+ file for the ce-dev user within the container that points to the temporary location</li>
+</ul>
+<p>So, to sum it up:</p>
+<ul>
+<li>The keys only reside in memory (RAM/tpmfs), it can&rsquo;t be exported by mistake as an image or shared, so never leaves your laptop/host machine</li>
+<li>It only &ldquo;lives&rdquo; while your container is running, and containers are not reachable from outside your host (see 
+<a href="#inter-container-communication" >Inter-container communication</a>
+ above and the 
+<a href="https://codeenigma.github.io/ce-dev-docs/1.x/networking" >networking</a>
+ section for details).</li>
+</ul>
+<p>One might object that using a maliciously crafted image, an attacker could then gain access to that key. Keep in mind that this feature only is enabled for container based on the ce-dev-base image (ie, have an x-ce-dev entry in their service definition in the compose configuration), and that said attacker might also as well trick you in running a malicious script, .deb or .rpm package or anything with the same result.</p>
+
+    </article>
+    <aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ssh">SSH</a>
+      <ul>
+        <li><a href="#inter-container-communication">Inter-container communication</a></li>
+        <li><a href="#external-communication">External communication</a>
+          <ul>
+            <li><a href="#setting-up">Setting up</a></li>
+            <li><a href="#under-the-hood">Under the hood</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside><aside class="menu">
+<p> </p>
+<ul>
+<li><a href="home">Home</a>
+<ul>
+<li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/install">Install</a></li>
+<li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/commands">Commands</a></li>
+<li><a href="https://codeenigma.github.io/ce-dev-docs/1.x/troubleshooting">Troubleshooting</a></li>
+<li><a href="ssh">SSH</a></li>
+<li><a href="userconfig">User config</a></li>
+</ul>
+</li>
+</ul>
+
+</aside>
+    </body>
+</html>

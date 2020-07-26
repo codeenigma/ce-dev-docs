@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://codeenigma.github.io/ce-dev-docs/1.x/ssh/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://codeenigma.github.io/ce-dev-docs/1.x/troubleshooting/</loc>
     <priority>0</priority>
   </url>
