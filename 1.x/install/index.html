@@ -21,7 +21,7 @@ We also assume common utilities are present:</p>
 <p>Follow the installation instructions for your distro from <a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>. It is generally straightforward, except for users of 
 <a href="https://duckduckgo.com/?q=docker&#43;fedora&#43;32"  target="_blank" rel="noopener">Fedora 31 and above</a>
 .</p>
-<p><em><strong>Shall I <code>sudo docker</code> or <code>docker</code>?</strong></em>
+<p><strong><em>Shall I <code>sudo docker</code> or <code>docker</code>?</em></strong>
 Most setup instructions you will find online instruct you to 
 <a href="https://docs.docker.com/engine/install/linux-postinstall/"  target="_blank" rel="noopener">add your user to the &ldquo;docker&rdquo; group</a>
  to be able to call docker as a standard user.
@@ -34,7 +34,8 @@ There is a
 <h4 id="docker-compose">Docker Compose</h4>
 <p>Follow the installation instruction for your distro from <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>.</p>
 <h4 id="mkcert">mkcert</h4>
-<p>Follow the instructions frow <a href="https://github.com/FiloSottile/mkcert#linux">https://github.com/FiloSottile/mkcert#linux</a> and make sure to have nss/certutil installed. On a successful install, running <code>mkcert install</code> should output something along the lines of:</p>
+<p>Follow the instructions frow <a href="https://github.com/FiloSottile/mkcert#linux">https://github.com/FiloSottile/mkcert#linux</a> and make sure to have nss/certutil installed. Simplest is to use the precompiled binaries versions (last option on the list).
+On a successful install, running <code>mkcert -install</code> should output something along the lines of:</p>
 <pre><code>Using the local CA at &quot;/home/XXX/.local/share/mkcert&quot; ✨
 The local CA is already installed in the system trust store! 👍
 The local CA is already installed in the Firefox and/or Chrome/Chromium trust store! 👍
@@ -68,7 +69,7 @@ sudo sysctl -p # Or better yet, reboot.
 <ul>
 <li>Be generous on RAM, but do not allocate it all for Docker. If you do not set a limit and you run a resource hungry service, everything, including processes on the hosts (think Electron apps, Chrome and the like, and by cascade the Docker processes themselves) will end up swapping and being ultra slow. 8GB or 10GB out of 16GB should be reasonable values.</li>
 <li>Do not throttle CPU usage (ie, allocate them all). Or, go the other way round and allocate only one. This seems contradictory, but it looks like it behave diffently based on your hardware and/or OS version. In certain cases, containers seem to be unable to make use of more than one core anyway, so allocating more than one ends up being counter-productive as it will impede processes on the host.</li>
-<li>Make sure you have enough disk space allocated for the VM Disk image. This again will vary on usage, but with a dozen of projects that have a 10GB database each, you&rsquo;re already well over 100GB. On the other hand, <em><strong>you can always grow the virtual disk afterward, but you can NOT shrink it without destroying all containers and volumes</strong></em>, so you can start small and grow it as needed if you encounter some &ldquo;no space left on device/disk full&rdquo; errors.</li>
+<li>Make sure you have enough disk space allocated for the VM Disk image. This again will vary on usage, but with a dozen of projects that have a 10GB database each, you&rsquo;re already well over 100GB. On the other hand, <strong><em>you can always grow the virtual disk afterward, but you can NOT shrink it without destroying all containers and volumes</em></strong>, so you can start small and grow it as needed if you encounter some &ldquo;no space left on device/disk full&rdquo; errors.</li>
 </ul>
 <p>
 <a href="https://codeenigma.github.io/ce-dev-docs/1.x/uploads/docker-mac-settings.png" >
@@ -78,7 +79,8 @@ sudo sysctl -p # Or better yet, reboot.
 <h4 id="docker-compose-1">Docker Compose</h4>
 <p>Docker Compose is bundled with Docker Desktop already.</p>
 <h4 id="mkcert-1">mkcert</h4>
-<p>Follow the instructions from <a href="https://github.com/FiloSottile/mkcert#macos">https://github.com/FiloSottile/mkcert#macos</a> and triple check nss/certutil installed. On a successful install, running <code>mkcert install</code> should output something along the lines of:</p>
+<p>Follow the instructions from <a href="https://github.com/FiloSottile/mkcert#macos">https://github.com/FiloSottile/mkcert#macos</a> and triple check nss/certutil installed. Simplest is to use the precompiled binaries versions (last option on the list).
+On a successful install, running <code>mkcert -install</code> should output something along the lines of:</p>
 <pre><code>Using the local CA at &quot;/Users/XXX/.local/share/mkcert&quot; ✨
 The local CA is already installed in the system trust store! 👍
 The local CA is already installed in the Firefox and/or Chrome/Chromium trust store! 👍
