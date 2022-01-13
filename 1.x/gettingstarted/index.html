@@ -23,7 +23,21 @@ We also use indifferently &ldquo;host&rdquo;, &ldquo;host machine&rdquo;, &ldquo
     │   └── provision.yml
     ├── ce-dev.compose.prebuilt.yml
     └── ce-dev.compose.yml
-</code></pre><p>We can now initialize the project:</p>
+</code></pre>
+<p>NOTE: If you are running ce-dev from within a virtual machine (KVM/Qemu etc), then you need to ensure the network ports are 'published', not just 'exposed'.
+Edit ~/projectname/ce-dev/ansible/deploy.yml
+<strike><pre><code>
+    expose:
+      - 443
+      - 80
+      - '22'
+</strike>
+    ports:
+      - '443:443'
+      - '80:80'
+      - '22'
+</code></pre></p>
+<p>We can now initialize the project:</p>
 <pre><code>cd hello
 ce-dev init
 </code></pre><p>What this has done is:</p>
