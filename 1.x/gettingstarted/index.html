@@ -24,19 +24,6 @@ We also use indifferently &ldquo;host&rdquo;, &ldquo;host machine&rdquo;, &ldquo
     ├── ce-dev.compose.prebuilt.yml
     └── ce-dev.compose.yml
 </code></pre>
-<p>NOTE: If you are running ce-dev from within a virtual machine (KVM/Qemu etc), then you need to ensure the network ports are 'published', not just 'exposed'.
-Edit ~/projectname/ce-dev/ansible/deploy.yml
-<strike><pre><code>
-    expose:
-      - 443
-      - 80
-      - '22'
-</strike>
-    ports:
-      - '443:443'
-      - '80:80'
-      - '22'
-</code></pre></p>
 <p>We can now initialize the project:</p>
 <pre><code>cd hello
 ce-dev init
@@ -82,7 +69,7 @@ You should now have two new running containers (check with <code>docker ps</code
 <pre><code>ce-dev browse
 </code></pre><p>That should open <a href="https://www.hello.local">https://www.hello.local</a> in a new browser&rsquo;s tab, with a fresh Drupal instance.</p>
 <pre><code>ce-dev shell
-</code></pre><p>Will open a shell in the &lsquo;web&rsquo; container. You can then <code>cd ~/deploy/live.local</code> and run a <code>vendor/drush/drush/drush uli</code> to grab a login link.</p>
+</code></pre><p>Will open a shell in the &lsquo;web&rsquo; container. You can then <code>cd ~/deploy/live.local</code> and run a <code>drush uli</code> to grab a login link.</p>
 
     </article>
     <aside>
