@@ -19,7 +19,7 @@ We also assume common utilities are present:</p>
 <h3 id="requirements">Requirements</h3>
 <h4 id="docker">Docker</h4>
 <p>Follow the installation instructions for your distro from <a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>. It is generally straightforward, except for users of 
-<a href="https://duckduckgo.com/?q=docker&#43;fedora&#43;32"  target="_blank" rel="noopener">Fedora 31 and above</a>
+<a href="https://fedoramagazine.org/docker-and-fedora-35/"  target="_blank" rel="noopener">Fedora - more information here</a>
 .</p>
 <p><strong><em>Shall I <code>sudo docker</code> or <code>docker</code>?</em></strong>
 Most setup instructions you will find online instruct you to 
@@ -28,11 +28,11 @@ Most setup instructions you will find online instruct you to
 There is a 
 <a href="https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface"  target="_blank" rel="noopener">non-neglectable risk</a>
  with that approach, even though it is far more convenient than being prompted for your password each and every step.</p>
-<p>By default, ce-dev will assume you went the &ldquo;safe&rdquo; way and use <code>sudo docker</code> or <code>sudo docker-compose</code>, but you can change that in your 
+<p>By default, ce-dev will assume you went the &ldquo;safe&rdquo; way and use <code>sudo docker</code> or <code>sudo docker compose</code>, but you can change that in your 
 <a href="https://codeenigma.github.io/ce-dev-docs/1.x/userconfig" >global configuration</a>
 .</p>
 <h4 id="docker-compose">Docker Compose</h4>
-<p>Follow the installation instruction for your distro from <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>.</p>
+<p>You will need Docker Compose v2 or higher. Linux users should install the <code>docker-compose-plugin</code> package from the Docker repository, if you do not have <code>docker compose</code> already: <a href="https://docs.docker.com/compose/install/linux/#install-using-the-repository">https://docs.docker.com/compose/install/linux/#install-using-the-repository</a></p>
 <h4 id="mkcert">mkcert</h4>
 <p>Follow the instructions frow <a href="https://github.com/FiloSottile/mkcert#linux">https://github.com/FiloSottile/mkcert#linux</a> and make sure to have nss/certutil installed. Simplest is to use the precompiled binaries versions (last option on the list).
 On a successful install, running <code>mkcert -install</code> should output something along the lines of:</p>
@@ -70,6 +70,7 @@ sudo sysctl -p # Or better yet, reboot.
 <li>Be generous on RAM, but do not allocate it all for Docker. If you do not set a limit and you run a resource hungry service, everything, including processes on the hosts (think Electron apps, Chrome and the like, and by cascade the Docker processes themselves) will end up swapping and being ultra slow. 8GB or 10GB out of 16GB should be reasonable values.</li>
 <li>Do not throttle CPU usage (ie, allocate them all). Or, go the other way round and allocate only one. This seems contradictory, but it looks like it behave diffently based on your hardware and/or OS version. In certain cases, containers seem to be unable to make use of more than one core anyway, so allocating more than one ends up being counter-productive as it will impede processes on the host.</li>
 <li>Make sure you have enough disk space allocated for the VM Disk image. This again will vary on usage, but with a dozen of projects that have a 10GB database each, you&rsquo;re already well over 100GB. On the other hand, <strong><em>you can always grow the virtual disk afterward, but you can NOT shrink it without destroying all containers and volumes</em></strong>, so you can start small and grow it as needed if you encounter some &ldquo;no space left on device/disk full&rdquo; errors.</li>
+<li>You might want to turn on the &ldquo;Use Rosetta for x86/amd64 emulation on Apple Silicon&rdquo; option in Docker under &ldquo;Features in development&rdquo;. This speeds up the emulation significantly.</li>
 </ul>
 <p>
 <a href="https://codeenigma.github.io/ce-dev-docs/1.x/uploads/docker-mac-settings.png" >

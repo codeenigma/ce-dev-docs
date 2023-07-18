@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://codeenigma.github.io/ce-dev-docs/1.x/css/main.min.9c98165d1dd1f18e44902c88197986b800a6f81dad436c40e50a55817cd0f131.css">
 </head><body class="doc"><header><a href="https://codeenigma.github.io/ce-dev-docs/1.x/home">ce-dev</a></header><article>
         <h1 id="getting-started">Getting started</h1>
-<p>Note: this tutorial always refers to <code>docker</code> and <code>docker-compose</code>, never to <code>sudo docker</code> and <code>sudo docker-compose</code>, for readability. Adapt the commands accordingly for your setup.
+<p>Note: this tutorial always refers to <code>docker</code> and <code>docker compose</code>, never to <code>sudo docker</code> and <code>sudo docker compose</code>, for readability. Adapt the commands accordingly for your setup.
 We also use indifferently &ldquo;host&rdquo;, &ldquo;host machine&rdquo;, &ldquo;laptop&rdquo; or &ldquo;workstation&rdquo; to refer to the machine you&rsquo;re using ce-dev on; and &ldquo;guest&rdquo;, &ldquo;container&rdquo; or &ldquo;service&rdquo; to refer to running containers. It will still work the same whether you actually use a laptop or not 😉</p>
 <h2 id="quickstart">Quickstart</h2>
 <p>Lets create a new Drupal 8 project. In a terminal <code>cd</code> to some convenient location, eg ~/Code or ~/Projects, and type:</p>
@@ -23,8 +23,7 @@ We also use indifferently &ldquo;host&rdquo;, &ldquo;host machine&rdquo;, &ldquo
     │   └── provision.yml
     ├── ce-dev.compose.prebuilt.yml
     └── ce-dev.compose.yml
-</code></pre>
-<p>We can now initialize the project:</p>
+</code></pre><p>We can now initialize the project:</p>
 <pre><code>cd hello
 ce-dev init
 </code></pre><p>What this has done is:</p>
@@ -40,7 +39,7 @@ ce-dev init
 <pre><code>ce-dev start
 </code></pre><p>What happened is:</p>
 <ul>
-<li>we called <code>docker-compose up</code></li>
+<li>we called <code>docker compose up</code></li>
 <li>ensured file permissions, ownership and uid/gid match between your user on the host and the &lsquo;ce-dev&rsquo; user within the container</li>
 <li>started Unison file synchronisation</li>
 <li>updated the /etc/hosts file on your laptop
@@ -69,7 +68,7 @@ You should now have two new running containers (check with <code>docker ps</code
 <pre><code>ce-dev browse
 </code></pre><p>That should open <a href="https://www.hello.local">https://www.hello.local</a> in a new browser&rsquo;s tab, with a fresh Drupal instance.</p>
 <pre><code>ce-dev shell
-</code></pre><p>Will open a shell in the &lsquo;web&rsquo; container. You can then <code>cd ~/deploy/live.local</code> and run a <code>drush uli</code> to grab a login link.</p>
+</code></pre><p>Will open a shell in the &lsquo;web&rsquo; container. You can then <code>cd ~/deploy/live.local</code> and run a <code>vendor/drush/drush/drush uli</code> to grab a login link.</p>
 
     </article>
     <aside>

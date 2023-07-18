@@ -34,7 +34,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/gettingstarted/</guid>
-      <description>Getting started Note: this tutorial always refers to docker and docker-compose, never to sudo docker and sudo docker-compose, for readability. Adapt the commands accordingly for your setup. We also use indifferently &amp;ldquo;host&amp;rdquo;, &amp;ldquo;host machine&amp;rdquo;, &amp;ldquo;laptop&amp;rdquo; or &amp;ldquo;workstation&amp;rdquo; to refer to the machine you&amp;rsquo;re using ce-dev on; and &amp;ldquo;guest&amp;rdquo;, &amp;ldquo;container&amp;rdquo; or &amp;ldquo;service&amp;rdquo; to refer to running containers. It will still work the same whether you actually use a laptop or not 😉</description>
+      <description>Getting started Note: this tutorial always refers to docker and docker compose, never to sudo docker and sudo docker compose, for readability. Adapt the commands accordingly for your setup. We also use indifferently &amp;ldquo;host&amp;rdquo;, &amp;ldquo;host machine&amp;rdquo;, &amp;ldquo;laptop&amp;rdquo; or &amp;ldquo;workstation&amp;rdquo; to refer to the machine you&amp;rsquo;re using ce-dev on; and &amp;ldquo;guest&amp;rdquo;, &amp;ldquo;container&amp;rdquo; or &amp;ldquo;service&amp;rdquo; to refer to running containers. It will still work the same whether you actually use a laptop or not 😉</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/install/</guid>
       <description>Install Hardware requirements: while the stack in itself is not necessarily heavy, you will need sufficient resources to run all your projects and diskspace to store them. You&amp;rsquo;ll need at least 8GB of RAM (16GB reccomended) and modern host (SSD, new processor) to run comfortably. We also assume common utilities are present:
- git curl gunzip  Linux Requirements Docker Follow the installation instructions for your distro from https://docs.docker.com/engine/install/. It is generally straightforward, except for users of Fedora 31 and above .</description>
+ git curl gunzip  Linux Requirements Docker Follow the installation instructions for your distro from https://docs.docker.com/engine/install/. It is generally straightforward, except for users of Fedora - more information here .</description>
     </item>
     
     <item>
@@ -84,7 +84,7 @@ Text editor The way some editors behave on save means the inumber of the file do
       
       <guid>https://codeenigma.github.io/ce-dev-docs/1.x/userconfig/</guid>
       <description>User config You can access a few global settings using ce-dev config.
-Binaries You can alter the commands called for &amp;lsquo;docker&amp;rsquo;, &amp;lsquo;docker-compose&amp;rsquo; and &amp;lsquo;mkcert&amp;rsquo;. This is mostly useful if you added your user to the &amp;lsquo;docker&amp;rsquo; group on Linux and don&amp;rsquo;t want to be prompted for your password. Or if you&amp;rsquo;re doing funky stuff !
+Binaries You can alter the commands called for &amp;lsquo;docker&amp;rsquo;, &amp;lsquo;docker compose&amp;rsquo; and &amp;lsquo;mkcert&amp;rsquo;. This is mostly useful if you added your user to the &amp;lsquo;docker&amp;rsquo; group on Linux and don&amp;rsquo;t want to be prompted for your password. Or if you&amp;rsquo;re doing funky stuff !
 SSH Username and Key Define the default username and private key to be used to be able to SSH from containers to private resources , eg.</description>
     </item>
     
